@@ -1,0 +1,48 @@
+.App-header {
+    display: flex;
+    background-color: #020203;
+    padding: 10px 20px;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    height: 80px; 
+    box-shadow: 120px 14px 21px 5px rgba(74, 74, 74, 0.622);
+    a {
+        text-decoration: none;
+    }
+    > a {
+        display: flex;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        align-items: center;
+       
+        
+        > img {
+            background-color: #FF0101;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+    
+        }
+        > p {
+            margin-left: 20px;
+            color: #FF0101;
+            font-size: 1.5em;
+            font-weight: 100;
+           
+        }
+    }
+    nav {
+        display: flex;
+        column-gap: 20px;
+        flex-basis: 80%;
+        align-items: center;
+        justify-content: space-around;
+        > a {
+            color: whitesmoke;
+            font-size: 1.4em;
+
+        }
+    }
+}
