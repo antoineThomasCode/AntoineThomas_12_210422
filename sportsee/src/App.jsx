@@ -15,7 +15,7 @@ function App() {
       <Aside />
       <Routes>
           <Route path='/' element={<Home />} />
-          <Route path="/:id" element={<Profil userInfos={userInfos} />} />
+          <Route path="/:id" element={<Profil userInfos={userInfos} userActivity={userActivity} userPerformance={userPerformance} userAverageSession={userAverageSession} />} />
       
         </Routes>
     </div>
