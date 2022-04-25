@@ -11,10 +11,13 @@ function Profil ({userInfos, userActivity, userPerformance, userAverageSession})
 
     return (
         <main className="main-profil">
-           <h1>Bonjour <span className="last-name">{currentUserInfo.userInfos.firstName}</span></h1>
-
+           <h1>Bonjour  <span className="last-name"> {currentUserInfo.userInfos.firstName}</span> </h1>
+           <BarChartUser className="daily-activity-graph" data={currentUserActivity.sessions}/>
            <div className="chart-container">
-                <BarChartUser data={currentUserActivity.sessions}/>
+                <p>autre graph </p>
+                <p>autre graph </p>
+                <p>autre graph </p>
+                <p>autre graph </p>
            </div>
         </main>
     )

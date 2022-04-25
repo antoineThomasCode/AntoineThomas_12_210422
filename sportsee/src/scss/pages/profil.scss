@@ -1,10 +1,42 @@
 .main-profil {
     display: flex;
-    margin-top: 50px;
     margin-left: 200px;
-    justify-content: center;
-    flex-direction: column;
-    background-color: lightcyan;
+    margin-top: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 80%;
     height: 80vh;
+    > h1 {
+        display: flex;
+        flex-basis: 100%;
+        font-size: 3em;
+        font-weight: 500;
+        height: 50px;
+        margin: 0;
+        span {
+            color: red; 
+            padding-left: 15px;
+        }
+    }
+    .daily-graph {
+        flex-basis: 60%;
+        height: 250px !important;
+        
+    }
+    .recharts-wrapper {
+        background-color: #FBFBFB;
+        padding: 80px 30px 40px 30px; 
+        position: relative;
+        bottom: 90px;
+    }
+    .recharts-surface {
+        height: 400px;
+        position: relative;
+        bottom: 50px;
+    }
+    .chart-container {
+        display: flex;
+        flex-basis: 100%;
+    }
+    
 }

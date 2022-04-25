@@ -4,27 +4,29 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 function  BarChartUser ({data}) {
 
-    console.log(data)
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer className='daily-graph'  width="30%" height="10%">
+            
         <BarChart
-          width={500}
-          height={300}
           data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
+
+       
+         barSize={8}
+         maxBarSize={300}
+         barGap={8}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey={data.day} />
-          <YAxis />
+        <text x={20} y={-50} fill="#282D30"  fontSize={20} fontWeight={700} textAnchor="top-left" >
+          Activité quotidienne
+        </text>
+          <CartesianGrid strokeDasharray="1" vertical={false} />
+          <XAxis  />
+          <YAxis dataKey="calories" hide={true}/>
+          <YAxis yAxisId="right-axis" dx={10} axisLine={false} tickLine={false} tickCount={3} dataKey="kilogram" orientation="right" margin={20} stroke="#95a5a6" domain={[dataMax => (dataMax - 1), 'dataMax']} />
           <Tooltip />
-          <Legend />
-          <Bar dataKey={data.kilogram} fill="#8884d8" />
-          <Bar dataKey="calories" fill="#82ca9d" />
+          
+          <Bar dataKey="kilogram" barSize={10} fill="#282D30"  />
+          <Bar dataKey="calories" barSize={10} fill="#E60000
+" />
         </BarChart>
       </ResponsiveContainer>
     )
