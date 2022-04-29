@@ -1,11 +1,11 @@
 import React from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 function  BarChartUser ({data}) {
 
     return (
-        <ResponsiveContainer className='daily-graph'  width="30%" height="10%">
+    <ResponsiveContainer className='daily-graph'  width="100%" height="100%">
             
         <BarChart
           data={data}
@@ -25,8 +25,7 @@ function  BarChartUser ({data}) {
           <Tooltip />
           
           <Bar dataKey="kilogram" barSize={10} fill="#282D30"  />
-          <Bar dataKey="calories" barSize={10} fill="#E60000
-" />
+          <Bar dataKey="calories" barSize={10} fill="#E60000" />
         </BarChart>
       </ResponsiveContainer>
     )
