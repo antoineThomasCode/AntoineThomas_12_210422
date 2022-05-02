@@ -8,12 +8,16 @@ function  BarChartUser ({data}) {
     <ResponsiveContainer className='daily-graph'  width="100%" height="100%">
             
         <BarChart
-          data={data}
-
-       
+         data={data}
          barSize={8}
          maxBarSize={300}
          barGap={8}
+         margin={{
+          top: 50,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
         >
         <text x={20} y={-50} fill="#282D30"  fontSize={20} fontWeight={700} textAnchor="top-left" >
           Activité quotidienne

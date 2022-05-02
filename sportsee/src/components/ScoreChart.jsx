@@ -47,6 +47,7 @@ function ScoreChart({ userScore, color }) {
 						innerRadius="60%"
 						outerRadius="60%"
 						fill={color.red}
+						strokeWidth={6}
 						startAngle={180}
 						endAngle={540}
 					/>
