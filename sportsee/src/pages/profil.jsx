@@ -16,7 +16,7 @@ import apple from '../assets/images/apple-icon.png'
 
 
 const userIdFix = 18
-function Profil ({userInfos, userActivity, userPerformance, userAverageSession}) {
+function Profile ({userInfos, userActivity, userPerformance, userAverageSession}) {
     const currentUserInfo = userInfos.find(user => user.id === userIdFix)
     const currentUserActivity = userActivity.find(user => user.userId === userIdFix)
     const currentUserAverageSession = userAverageSession.find(user => user.userId === userIdFix)
@@ -42,4 +42,4 @@ function Profil ({userInfos, userActivity, userPerformance, userAverageSession})
         </main>
     )
 }
-export default Profil
+export default Profile
