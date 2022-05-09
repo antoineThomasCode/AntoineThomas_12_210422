@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { PieChart, Pie, Legend, ResponsiveContainer } from "recharts";
 
 

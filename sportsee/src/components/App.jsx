@@ -6,7 +6,7 @@ import {userInfos, userActivity, userPerformance, userAverageSession} from "../d
 import Aside from "./Aside";
 import Header from './Header';
 import Home from '../pages/home';
-import Profile from "../pages/profil";
+import Profile from "../pages/profile";
 
 function App() {
   return (
@@ -16,7 +16,6 @@ function App() {
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/:id" element={<Profile userInfos={userInfos} userActivity={userActivity} userPerformance={userPerformance} userAverageSession={userAverageSession} />} />
-      
         </Routes>
     </div>
   );

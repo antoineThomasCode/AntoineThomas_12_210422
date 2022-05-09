@@ -1,5 +1,8 @@
 import React from "react";
-import "../scss/pages/profil.scss"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import genericFetch from "../utils/genericFetch";
+import "../scss/pages/profile.scss"
 
 import BarChartUser from "../components/BarChart";
 import AverageSession from "../components/AverageChart";
@@ -15,21 +18,37 @@ import burger from '../assets/images/burger-icon.png'
 import apple from '../assets/images/apple-icon.png'
 
 
-const userIdFix = 18
-function Profile ({userInfos, userActivity, userPerformance, userAverageSession}) {
-    const currentUserInfo = userInfos.find(user => user.id === userIdFix)
-    const currentUserActivity = userActivity.find(user => user.userId === userIdFix)
-    const currentUserAverageSession = userAverageSession.find(user => user.userId === userIdFix)
-    const currentUserPerformances = userPerformance.find(user => user.userId === userIdFix)
 
+
+
+
+
+function Profile ({userInfos, userActivity, userPerformance, userAverageSession}) {
+
+    const  { id } = useParams();
+    const currentUserInfo = userInfos.find(user => user.id === parseInt(id))
+    const currentUserActivity = userActivity.find(user => user.userId === parseInt(id))
+    const currentUserAverageSession = userAverageSession.find(user => user.userId === parseInt(id))
+    const currentUserPerformances = userPerformance.find(user => user.userId === parseInt(id))
     
+    const [dataState, setDataState] = useState({})
+
+    useEffect(() => {
+      const getApi = async () => {
+        const data = await genericFetch(parseInt(id), 'activity');
+        setDataState(data);
+      };
+      getApi();
+    }, [])
+    console.log(dataState.data) 
+   
     return (
         <main className="main-profil">
            <h1>Bonjour  <span className="last-name"> {currentUserInfo.userInfos.firstName}</span> </h1>
            <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
            <div className="charts-container">
                 <BarChartUser className="daily-activity-graph" data={currentUserActivity.sessions}/>
-                <AverageSession className='average-session-graph' data={currentUserAverageSession.sessions}/>
+                <AverageSession className='average-session-graph' session={currentUserAverageSession.sessions}/>
                 <Performance data={currentUserPerformances.data} />
                 <ScoreChart userScore={currentUserInfo.score} color={'red'} />
            </div>
@@ -42,4 +61,5 @@ function Profile ({userInfos, userActivity, userPerformance, userAverageSession}
         </main>
     )
 }
+
 export default Profile
