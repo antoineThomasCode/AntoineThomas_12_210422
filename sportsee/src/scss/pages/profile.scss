@@ -95,6 +95,9 @@
         background-color: red;
         flex-basis: 30%; 
         height: 250px !important;
+        .recharts-line-dot{
+            display: none;
+        }
     }
    .score-chart {
        border-radius:  5px;
