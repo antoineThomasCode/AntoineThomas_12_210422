@@ -1,0 +1,68 @@
+.App-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #020203;
+  padding: 10px 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 80px;
+  -webkit-box-shadow: 120px 14px 21px 5px rgba(74, 74, 74, 0.622);
+          box-shadow: 120px 14px 21px 5px rgba(74, 74, 74, 0.622);
+}
+
+.App-header a {
+  text-decoration: none;
+}
+
+.App-header > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App-header > a > img {
+  background-color: #FF0101;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.App-header > a > p {
+  margin-left: 20px;
+  color: #FF0101;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.App-header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.App-header nav > a {
+  color: whitesmoke;
+  font-size: 1.4em;
+}
+/*# sourceMappingURL=Header.css.map */

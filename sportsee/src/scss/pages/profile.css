@@ -1,0 +1,159 @@
+.main-profil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 200px;
+  margin-top: 30px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 80%;
+  height: 80vh;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-profil > h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  font-size: 3em;
+  font-weight: 500;
+  height: 50px;
+  margin: 0;
+}
+
+.main-profil > h1 span {
+  color: red;
+  padding-left: 15px;
+}
+
+.main-profil .charts-container {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 65vh;
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 35px;
+}
+
+.main-profil .logo-list {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  height: 65vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 15px;
+}
+
+.main-profil .logo-list .info-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FBFBFB;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0px 15px;
+}
+
+.main-profil .logo-list .info-card:first-child > img {
+  background: rgba(255, 0, 0, 0.07);
+}
+
+.main-profil .logo-list .info-card:nth-child(2) > img {
+  background: rgba(74, 184, 255, 0.07);
+}
+
+.main-profil .logo-list .info-card:nth-child(3) > img {
+  background: rgba(249, 206, 35, 0.07);
+}
+
+.main-profil .logo-list .info-card:nth-child(4) > img {
+  background: rgba(253, 81, 129, 0.07);
+}
+
+.main-profil .logo-list .info-card img {
+  padding: 20px;
+  width: auto;
+  height: 20px;
+  border-radius: 6px;
+}
+
+.main-profil .logo-list .info-card > div {
+  padding: 0 25px;
+}
+
+.main-profil .logo-list .info-card > div p:first-child {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.main-profil .logo-list .info-card > div p:nth-child(2) {
+  padding: 0;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.main-profil .daily-graph {
+  border-radius: 5px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  height: 250px !important;
+  background-color: #FBFBFB;
+}
+
+.main-profil .perf-graph {
+  border-radius: 5px;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  height: 250px !important;
+  background-color: #282D30;
+}
+
+.main-profil .average-session {
+  border-radius: 5px;
+  background-color: red;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  height: 250px !important;
+}
+
+.main-profil .average-session .recharts-line-dot {
+  display: none;
+}
+
+.main-profil .score-chart {
+  border-radius: 5px;
+  height: 250px !important;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  background-color: #FBFBFB;
+}
+/*# sourceMappingURL=profile.css.map */

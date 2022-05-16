@@ -1,0 +1,58 @@
+.App-aside {
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  width: 120px;
+  z-index: -1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App-aside div {
+  height: 70px;
+  width: 70px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App-aside div img {
+  height: 40px;
+  width: 40px;
+}
+
+.App-aside > p {
+  position: absolute;
+  color: whitesmoke;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  bottom: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.8em;
+  min-width: 160px;
+}
+/*# sourceMappingURL=Aside.css.map */

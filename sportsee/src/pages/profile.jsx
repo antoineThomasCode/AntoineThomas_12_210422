@@ -1,7 +1,10 @@
+
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../scss/pages/profile.scss"
+
+
 
 import BarChartUser from "../components/BarChart";
 import AverageSession from "../components/AverageChart";
@@ -24,10 +27,10 @@ import requestHandler from "../utils/genericFetch";
 
 
 function Profile ({userInfos, userActivity, userPerformance, userAverageSession}) {
-
+    console.log(process.env.REACT_APP_API)
     const  { id } = useParams();
     const currentUserInfo = userInfos.find(user => user.id === parseInt(id))
-    /*const currentUserActivity = userActivity.find(user => user.userId === parseInt(id))*/
+    const currentUserActivity = userActivity.find(user => user.userId === parseInt(id))
     const currentUserAverageSession = userAverageSession.find(user => user.userId === parseInt(id))
     const currentUserPerformances = userPerformance.find(user => user.userId === parseInt(id)) 
     
@@ -68,22 +71,25 @@ function Profile ({userInfos, userActivity, userPerformance, userAverageSession}
       getApi();
     }, [id])
 
+    const score = dataUser?.todayScore || dataUser?.score;
+
+
     if (!dataUser || !userActivitySessions || !userPerformanceData || ! userAverageSessionsData) {
       return <main className="main-profil"><div>Chargement des données de l'utilisateur</div></main>
     } return <main className="main-profil">
-                <h1>Bonjour  <span className="last-name"> {dataUser ? (dataUser.userInfos.firstName) : 'data non chargé'}</span> </h1>
+                <h1>Bonjour  <span className="last-name"> {process.env.REACT_APP_API === 'TRUE' ? (dataUser.userInfos.firstName) : currentUserInfo.userInfos.lastName}</span> </h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                 <div className="charts-container">
-                      <BarChartUser className="daily-activity-graph" data={userActivitySessions ?  (userActivitySessions.sessions) : 'data'}/>
-                      <AverageSession className='average-session-graph' session={userAverageSessionsData.sessions}/>
-                      <Performance data={userPerformanceData.data} />
-                      <ScoreChart userScore={dataUser.score} color={'red'} />
+                      <BarChartUser className="daily-activity-graph" data={process.env.REACT_APP_API === 'TRUE' ?  (userActivitySessions.sessions) : currentUserActivity.sessions}/>
+                      <AverageSession className='average-session-graph' session={process.env.REACT_APP_API === 'TRUE' ? (userAverageSessionsData.sessions) : currentUserAverageSession.sessions }/>
+                      <Performance data={process.env.REACT_APP_API === 'TRUE' ? (userPerformanceData.data) : currentUserPerformances.data } />
+                      <ScoreChart userScore={score} color={'red'} />
                 </div>
                 <div className="logo-list">
-                      <InfoCard icon={fire} alt={'icon des calories'} quantity={dataUser.keyData.calorieCount} unity={'kCal'} nutrient={'Calories'}/>
-                      <InfoCard icon={chicken} alt={'icon des protéines'} quantity={dataUser.keyData.proteinCount} unity={'g'} nutrient={'Proteines'}/>
-                      <InfoCard icon={apple} alt={'icon des Glucides'} quantity={dataUser.keyData.carbohydrateCount} unity={'g'} nutrient={'Glucides'}/>
-                      <InfoCard icon={burger} alt={'icon des Lipides'} quantity={dataUser.keyData.lipidCount} unity={'g'} nutrient={'Lipides'}/>
+                      <InfoCard icon={fire} alt={'icon des calories'} quantity={process.env.REACT_APP_API === 'TRUE' ? (dataUser.keyData.calorieCount) : currentUserInfo.keyData.calorieCount} unity={'kCal'} nutrient={'Calories'}/>
+                      <InfoCard icon={chicken} alt={'icon des protéines'} quantity={process.env.REACT_APP_API === 'TRUE' ? (dataUser.keyData.proteinCount) : currentUserInfo.keyData.proteinCount} unity={'g'} nutrient={'Proteines'}/>
+                      <InfoCard icon={apple} alt={'icon des Glucides'} quantity={process.env.REACT_APP_API === 'TRUE' ? (dataUser.keyData.carbohydrateCount) : currentUserInfo.keyData.carbohydrateCount} unity={'g'} nutrient={'Glucides'}/>
+                      <InfoCard icon={burger} alt={'icon des Lipides'} quantity={ process.env.REACT_APP_API === 'TRUE' ? (dataUser.keyData.lipidCount) : currentUserInfo.keyData.lipidCount} unity={'g'} nutrient={'Lipides'}/>
                 </div>
             </main>
 }
