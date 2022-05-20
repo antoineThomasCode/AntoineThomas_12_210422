@@ -7,7 +7,8 @@ import PropTypes from 'prop-types';
  * @param {number} value (number between 1 and 7)
  * @returns string --> Day of the week 
  */
-function formatPolarAxis(value) {
+function formatPolarAxis(value = 0) {
+  if(value === 0) return "N/A"
   if(value === 1) return "L"
   if(value === 2) return "M"
   if(value === 3) return "M"

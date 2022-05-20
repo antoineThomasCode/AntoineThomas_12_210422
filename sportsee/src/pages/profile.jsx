@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import "../scss/pages/profile.scss"
 
 
+import Loader from "../components/loader";
 
 import BarChartUser from "../components/BarChart";
 import AverageSession from "../components/AverageChart";
@@ -75,7 +76,7 @@ function Profile ({userInfos, userActivity, userPerformance, userAverageSession}
 
 
     if (!dataUser || !userActivitySessions || !userPerformanceData || ! userAverageSessionsData) {
-      return <main className="main-profil"><div>Chargement des données de l'utilisateur</div></main>
+      return <Loader />
     } return <main className="main-profil">
                 <h1>Bonjour  <span className="last-name"> {process.env.REACT_APP_API === 'TRUE' ? (dataUser.userInfos.firstName) : currentUserInfo.userInfos.lastName}</span> </h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
