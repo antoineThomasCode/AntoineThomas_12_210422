@@ -2,7 +2,7 @@ import React from "react";
 
 function Loader () {
     return (
-        <main className="main-profil"><div>Chargement des données de l'utilisateur</div></main>
+        <div className="loader">Chargement des données de l'utilisateur</div>
     )
 }
 export default Loader
