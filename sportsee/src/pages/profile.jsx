@@ -7,18 +7,6 @@ import "../scss/pages/profile.scss"
 
 import Loader from "../components/Loader";
 
-import BarChartUser from "../components/BarChart";
-import AverageSession from "../components/AverageChart";
-import Performance from "../components/Performance";
-import ScoreChart from "../components/ScoreChart";
-
-// infoCards elements needed 
-import InfoCard from "../components/InfoCard";
-//img 
-import fire from '../assets/images/fire-icon.png'
-import chicken from '../assets/images/chicken-icon.png'
-import burger from '../assets/images/burger-icon.png'
-import apple from '../assets/images/apple-icon.png'
 import requestHandler from "../utils/genericFetch";
 import isFromApi from "../utils/isFromApi";
 import ProfilContentUser from "../components/ProfilContent";

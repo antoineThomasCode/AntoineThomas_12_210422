@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Legend, CartesianGrid, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
 
 import PropTypes from 'prop-types';
 /**
@@ -18,7 +18,38 @@ function formatPolarAxis(value = 0) {
   if(value === 7) return "D"
   return value
 }
+function CustomCursor(props) {
+  if (props) {
+    const { points, width, height } = props;
+    const { x, y } = points[0];
 
+    // console.log("props", x,y,width,height);
+    return (
+      <Rectangle
+        fill={'red'}
+        x={x}
+        y={y - 30}
+        width={20}
+        height={20}
+      />
+    );
+  }
+  return <div>... waiting for data</div>;
+}
+
+function CustomTooltip({ payload }) {
+  if (payload && payload.length) {
+    return (
+      <div
+      className="custom-tooltip"
+      style={{ background: "white", padding: "1px 5px" }}
+      >
+        <p className="desc">{payload[0].payload.sessionLength} min</p>
+      </div>
+    );
+  }
+  return <div>... waiting for data</div>;
+}
 /**
  * 
  * @param {session} waiting an object from API or mocked data to create a chart width RECHARTS
@@ -41,8 +72,34 @@ function AverageSession ({session}) {
         >
           <CartesianGrid strokeOpacity='0' />
           <XAxis dataKey="day" fontSize="14px" tickLine={false} axisLine={false} tickFormatter={formatPolarAxis}  stroke='white' />
-    
-          <Tooltip />
+          <Legend
+							verticalAlign="top"
+							align="left"
+							iconSize={0}
+							content={() => (
+								<div
+									className="legend_text"
+									style={{
+										color: "white",
+										marginTop: "-10px",
+										marginLeft: "20px",
+										opacity: ".5",
+										position: "absolute",
+										top: "0",
+									}}
+								>
+									Durée moyenne des
+									<br />
+									sessions
+								</div>
+							)}
+							margin={{ left: 20 }}
+						/>
+          <Tooltip
+							content={<CustomTooltip />}
+							animationEasing="ease-out"
+							cursor={<CustomCursor />}
+						/>
           
           <Line type="monotone" dataKey="sessionLength" stroke="whitesmoke" activeDot={{ r: 7 }} />
           
