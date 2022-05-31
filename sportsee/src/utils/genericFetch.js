@@ -16,6 +16,11 @@ const requestHandler = async ({
       const res = await fetch(url, { method, headers, body: body === '' ? null : body });
       return res.json();
     } catch (err) {
+        const error = document.createElement('span')
+        const mainContainer = document.getElementById('main-container')
+        error.innerHTML = err
+        mainContainer.appendChild(error)
+
         console.log(err)
     }
   };

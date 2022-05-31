@@ -9,11 +9,11 @@ import icon4 from "../assets/images/aside-icon-4.svg"
 function Aside () {
     return (
         <aside className="App-aside">
-            <div><img src={icon1} alt="" /></div>
-            <div><img src={icon2} alt="" /></div>
-            <div><img src={icon3} alt="" /></div>
-            <div><img src={icon4} alt="" /></div>
-            <p>Copiryght, SportSee 2020</p>
+            <div><img src={icon1} alt="icone de flamme" /></div>
+            <div><img src={icon2} alt="icone cuisse de poulet" /></div>
+            <div><img src={icon3} alt="icone de pomme" /></div>
+            <div><img src={icon4} alt="icone de hamburger" /></div>
+            <p>Copyright, SportSee 2020</p>
         </aside>
     )
 }

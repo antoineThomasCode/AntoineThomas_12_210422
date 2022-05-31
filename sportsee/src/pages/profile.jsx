@@ -29,53 +29,48 @@ function Profile ({userInfos, userActivity, userPerformance, userAverageSession}
 
     
     useEffect(() => {
+      if(!isFromApi) return
       const getApi = async () => {
-        if (isFromApi) {
           const data = await requestHandler({url: `http://localhost:3000/user/${id}/`});
           setDataUser(data.data);
-        }
       };
       getApi();
     }, [id])
 
     useEffect(() => {
+      if(!isFromApi) return
       const getApi = async () => {
-       if (isFromApi) {
         const data = await requestHandler({url: `http://localhost:3000/user/${id}/activity`});
         setUserActivitySessions(data.data);
-       }
       };
       getApi();
     }, [id])
 
     useEffect(() => {
+      if(!isFromApi) return
       const getApi = async () => {
-        if (isFromApi) {
           const data = await requestHandler({url: `http://localhost:3000/user/${id}/performance`});
           setUserPerformanceData(data.data);
-        }
       };
       getApi();
     }, [id])
 
     useEffect(() => {
+      if(!isFromApi) return
       const getApi = async () => {
-        if (isFromApi) {
           const data = await requestHandler({url: `http://localhost:3000/user/${id}/average-sessions`});
           setAverageSessionsData(data.data);
-        }
       };
       getApi();
     }, [id])
+    // solve issue width returned object score or todayScore from API 
+    const score = dataUser?.todayScore || dataUser?.score || currentUserInfo?.score || currentUserInfo?.todayScore
+  
 
-    const score = dataUser?.todayScore || dataUser?.score;
-
-
-    if ((!dataUser || !userActivitySessions || !userPerformanceData || ! userAverageSessionsData) && isFromApi) {
+    if ((!dataUser || !userActivitySessions || !userPerformanceData || !userAverageSessionsData) && isFromApi) {
       return <Loader />
     } 
-    console.log(isFromApi)
-    return <main className="main-profil">
+    return <main className="main-profil" id="main-container">
                 <ProfilContentUser
                 firstName={isFromApi ? (dataUser.userInfos.firstName) : currentUserInfo.userInfos.lastName}
                 dailyActivity={ isFromApi ? (userActivitySessions.sessions) : currentUserActivity.sessions}

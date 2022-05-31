@@ -20,7 +20,7 @@ function formatPolarAxis(value = 0) {
 }
 function CustomCursor(props) {
   if (props) {
-    const { points, width, height } = props;
+    const { points } = props;
     const { x, y } = points[0];
 
     // console.log("props", x,y,width,height);
