@@ -1,7 +1,3 @@
-function isFromApi () {
-    if (process.env.REACT_APP_API === 'TRUE') {
-      return true
-    }
-    return false
-  }
+const isFromApi = Boolean(process.env.REACT_APP_API === 'TRUE')
+
 export default isFromApi

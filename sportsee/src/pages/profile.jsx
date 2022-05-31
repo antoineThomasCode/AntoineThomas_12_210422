@@ -71,9 +71,10 @@ function Profile ({userInfos, userActivity, userPerformance, userAverageSession}
     const score = dataUser?.todayScore || dataUser?.score;
 
 
-    if (!dataUser || !userActivitySessions || !userPerformanceData || ! userAverageSessionsData) {
+    if ((!dataUser || !userActivitySessions || !userPerformanceData || ! userAverageSessionsData) && isFromApi) {
       return <Loader />
     } 
+    console.log(isFromApi)
     return <main className="main-profil">
                 <ProfilContentUser
                 firstName={isFromApi ? (dataUser.userInfos.firstName) : currentUserInfo.userInfos.lastName}
