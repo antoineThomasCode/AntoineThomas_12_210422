@@ -13,9 +13,9 @@ function Header() {
             </Link>
             <nav>
                 <Link to='/'>Accueil</Link>
-                <Link to='/'>Profil</Link>
-                <Link to='/'>Réglage</Link>
-                <Link to='/'>Communauté</Link>
+                <Link to='#'>Profil</Link>
+                <Link to='#'>Réglage</Link>
+                <Link to='#'>Communauté</Link>
             </nav>
          </header>
     );

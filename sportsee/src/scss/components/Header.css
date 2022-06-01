@@ -12,8 +12,8 @@
           align-items: center;
   position: relative;
   height: 80px;
-  -webkit-box-shadow: 120px 14px 21px 5px rgba(74, 74, 74, 0.622);
-          box-shadow: 120px 14px 21px 5px rgba(74, 74, 74, 0.622);
+  -webkit-box-shadow: 120px 14px 21px 5px rgba(74, 94, 94, 0.622);
+          box-shadow: 120px 14px 21px 5px rgba(74, 74, 94, 0.622);
 }
 
 .App-header a {

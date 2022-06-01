@@ -18,7 +18,7 @@ function Performance ({data}) {
       <ResponsiveContainer className='perf-graph'>
         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
           <PolarGrid stroke="white" />
-          <PolarAngleAxis dataKey="kind" tickFormatter={formatPolarAxis} stroke="white" fontSize="11px"  />
+          <PolarAngleAxis dataKey="kind" tickFormatter={formatPolarAxis} stroke="white" fontSize="8px"  />
           <PolarRadiusAxis stroke="transparent" fill="transparent"/>
           <Radar  dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
         </RadarChart>

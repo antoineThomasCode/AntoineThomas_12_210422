@@ -2,7 +2,6 @@ import { PieChart, Pie, Legend, ResponsiveContainer } from "recharts";
 
 
 function ScoreChart({ userScore, color }) {
-	// Build modelData with the score of the user & (1 - userScore)
 	const modelData = [
 		{ name: "score", value: 1 - userScore, stroke: 'transparent' },
 		{ name: "score", value: userScore, stroke: 'red' },
@@ -16,8 +15,8 @@ function ScoreChart({ userScore, color }) {
 						dy="50%"
 						dx="50%"
 						textAnchor="middle"
-						fill={color.dark_grey}
-						style={{ fontSize: "24px" ,fontWeight: "bold"}}
+						fill={'black'}
+						style={{ fontSize: "15px" ,fontWeight: "bold"}}
 					>
 						{userScore * 100}%
 					</text>
@@ -25,7 +24,8 @@ function ScoreChart({ userScore, color }) {
 						dy="60%"
 						dx="50%"
 						textAnchor="middle"
-						fill={color.grey}
+						fill={"grey"}
+						style={{ fontSize: "10px" ,fontWeight: "bold"}}
 					>
 						de votre 
 					</text>
@@ -33,7 +33,8 @@ function ScoreChart({ userScore, color }) {
 						dy="70%"
 						dx="50%"
 						textAnchor="middle"
-						fill={color.grey}
+						fill={'grey'}
+						style={{ fontSize: "10px" ,fontWeight: "bold"}}
 					>
 						objectif
 					</text>
@@ -59,10 +60,11 @@ function ScoreChart({ userScore, color }) {
 								style={{
 									color: "black",
 									marginTop: "10px",
-									marginLeft: "20px",
+									marginLeft: "30px",
 									opacity: "1",
 									position: "absolute",
-									top: "0",
+									fontSize: "10px", 
+									top: "-20",
 								}}
 							>
 								{payload.payload[0].value[0].toUpperCase() +

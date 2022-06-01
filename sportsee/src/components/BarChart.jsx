@@ -19,7 +19,11 @@ function setLegend(text) {
       >
         Activité quotidienne
       </span>
-      <span className="recharts-legend-item-text dark_grey">
+      <span className="recharts-legend-item-text dark_grey"
+      style={{
+        position: "relative",
+        left: "0"
+      }}>
         {types[text]}
       </span>
     </span>
@@ -38,7 +42,7 @@ function CustomTooltip({ active, payload }) {
       </div>
     );
   }
-  return <div>... waiting for data</div>;
+  return <div>... en attente des données</div>;
 }
 
 function  BarChartUser ({data}) {

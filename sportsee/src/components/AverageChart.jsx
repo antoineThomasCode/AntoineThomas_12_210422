@@ -48,7 +48,7 @@ function CustomTooltip({ payload }) {
       </div>
     );
   }
-  return <div>... waiting for data</div>;
+  return <div>... en attente des donées </div>
 }
 /**
  * 
@@ -85,6 +85,7 @@ function AverageSession ({session}) {
 										marginLeft: "20px",
 										opacity: ".5",
 										position: "absolute",
+                    fontSize: "10px",
 										top: "0",
 									}}
 								>
