@@ -1,7 +1,12 @@
 import { PieChart, Pie, Legend, ResponsiveContainer } from "recharts";
 
-
-function ScoreChart({ userScore, color }) {
+import PropTypes from 'prop-types';
+/**
+ * 
+ * @param {number} userScore 
+ * @returns component - scoreChart
+ */
+function ScoreChart({ userScore }) {
 	const modelData = [
 		{ name: "score", value: 1 - userScore, stroke: 'transparent' },
 		{ name: "score", value: userScore, stroke: 'red' },
@@ -46,7 +51,7 @@ function ScoreChart({ userScore, color }) {
 						cy="50%"
 						innerRadius="60%"
 						outerRadius="60%"
-						fill={color.red}
+						fill={'red'}
 						strokeWidth={6}
 						startAngle={180}
 						endAngle={540}
@@ -77,3 +82,7 @@ function ScoreChart({ userScore, color }) {
 	);
 }
 export default ScoreChart
+
+ScoreChart.propTypes = {
+		userScore: PropTypes.number
+  }

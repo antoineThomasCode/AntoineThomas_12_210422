@@ -52,7 +52,7 @@ function CustomTooltip({ payload }) {
 }
 /**
  * 
- * @param {session} waiting an object from API or mocked data to create a chart width RECHARTS
+ * @param {object} session - waiting an object from API or mocked data to create a chart width RECHARTS
  * @returns component 
  */
 function AverageSession ({session}) {

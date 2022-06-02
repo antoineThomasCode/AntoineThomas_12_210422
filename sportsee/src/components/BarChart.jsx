@@ -1,6 +1,13 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
+import PropTypes from 'prop-types';
+
+/**
+ * 
+ * @param {string} text 
+ * @returns component
+ */
 function setLegend(text) {
   const types = {
     kilogram: "Poids (kg)",
@@ -88,3 +95,10 @@ function  BarChartUser ({data}) {
     )
 }
 export default BarChartUser
+
+BarChartUser.propTypes = {
+  sessions: PropTypes.arrayOf(PropTypes.shape({
+      kilogram: PropTypes.number,
+      calories: PropTypes.number
+  }))
+}

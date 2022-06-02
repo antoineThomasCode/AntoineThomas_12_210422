@@ -1,7 +1,11 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
-
-
+import PropTypes from 'prop-types';
+/**
+ * 
+ * @param {object} data 
+ * @returns component
+ */
 function Performance ({data}) {
     
     function formatPolarAxis(value) {
@@ -26,3 +30,10 @@ function Performance ({data}) {
     )
 }
 export default Performance
+
+Performance.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+      value: PropTypes.number,
+      kind: PropTypes.number
+  }))
+}
