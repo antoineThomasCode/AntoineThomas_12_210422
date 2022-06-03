@@ -1,5 +1,5 @@
 .main-profil {
-    overflow: hidden;
+
     display: flex;
 }
 .profilContent {
@@ -27,6 +27,7 @@
     > p {
         flex-basis: 100%;
     }
+   
     .charts-container {
         margin-top: 30px;
         display: flex;
@@ -90,11 +91,21 @@
         height: 250px !important;
         background-color: #FBFBFB;
     }
+    @media screen and (min-width: 1400px) {
+        .daily-graph {
+            height: 300px !important;
+        }
+    }
     .perf-graph {
         border-radius: 5px;
         flex-basis: 33%;
         height: 200px !important; 
         background-color: #282D30;         ;
+    }
+    @media screen and (min-width: 1400px) {
+        .perf-graph {
+            height: 350px !important;
+        }
     }
     .average-session {
         border-radius: 5px;
@@ -105,12 +116,22 @@
             display: none;
         }
     }
+    @media screen and (min-width: 1400px) {
+        .average-session {
+            height: 350px !important;
+        }
+    }
    .score-chart {
        border-radius:  5px;
        height: 200px !important;
        flex-basis: 25%;
        background-color: #FBFBFB;
    }
+   @media screen and (min-width: 1400px) {
+    .score-chart {
+        height: 350px !important;
+    }
+}
    .legend_text {
        top: -20px;
        left: -20px !important; 
